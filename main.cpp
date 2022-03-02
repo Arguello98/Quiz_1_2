@@ -66,7 +66,11 @@ class NoticiaDigital : public Noticia{
 		void getinfo(){
 			noticiaBase();
 			for(int i = 0; i<medios.size();i++){
-				cout<<medios[i].nombreArchivo << "  "<<medios[i].tipoArchivo<< " "<<medios[i].ubicacion<< " "<< medios[i].referencia<<endl;
+				cout<<"Nombre Archivo: "<<medios[i].nombreArchivo <<endl;
+				cout<<"Tipo de Archivo: "<<medios[i].tipoArchivo<<endl;
+				cout<<"Ubicacion: "<<medios[i].ubicacion<< endl;
+				cout<<"Referencia:  "<< medios[i].referencia<<endl;
+				cout<<"	"<<endl;
 			}
 			cout<<"---------------------------"<<endl;
 		}
@@ -92,8 +96,9 @@ int main(int argc, char** argv) {
 	
 	
 	vector<Noticia*> h;
-	h.push_back(new NoticiaRadio("Noticia Radio","28/02/22","Daniel","AudioFile", "charla"));
+	h.push_back(new NoticiaRadio("Noticia Radio","28/02/22","Daniel","https://www.youtube.com/watch?v=dQw4w9WgXcQ", "Music Video"));
 	h.push_back(&n);
+	h.push_back(new NoticiaPaper("Noticia Paper", "02/03/2022","Daniel","C txt","titulo"));
 	
 	for(int i=0; i<h.size(); i++){
 		h[i]->getinfo();
